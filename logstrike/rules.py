@@ -56,8 +56,8 @@ RULES: list[ThreatRule] = [
         mitre_technique="T1110.001 – Brute Force: Password Guessing",
         mitre_url="https://attack.mitre.org/techniques/T1110/001/",
         pattern=re.compile(
-            r"sshd.*\[(Failed password|Invalid user|authentication failure)|"
-            r"(Failed password|Invalid user|authentication failure).*sshd",
+            r"(Failed password|Invalid user|authentication failure)",
+            re.IGNORECASE,
         ),
         tags=["brute-force", "ssh", "authentication"],
     ),
