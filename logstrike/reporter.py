@@ -79,7 +79,7 @@ def print_summary(analyzer: LogStrikeAnalyzer, file: TextIO = sys.stdout) -> Non
 
     print(f"\n{_BOLD}{'═' * 62}{_RESET}", file=file)
     print(f"{_BOLD}  LogStrike — Analysis Summary{_RESET}", file=file)
-    print(f"  Author    : Ernest Kosmatko (@Ernest-Kosmatko)", file=file)
+    print("  Author    : Ernest Kosmatko (@Ernest-Kosmatko)", file=file)
     print(f"  Generated : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", file=file)
     print(sep, file=file)
     print(f"  Lines processed : {s['total_lines_processed']:,}", file=file)
