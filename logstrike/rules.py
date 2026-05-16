@@ -56,8 +56,8 @@ RULES: list[ThreatRule] = [
         mitre_technique="T1110.001 – Brute Force: Password Guessing",
         mitre_url="https://attack.mitre.org/techniques/T1110/001/",
         pattern=re.compile(
+            r"sshd.*\[(Failed password|Invalid user|authentication failure)|"
             r"(Failed password|Invalid user|authentication failure).*sshd",
-            re.IGNORECASE,
         ),
         tags=["brute-force", "ssh", "authentication"],
     ),
@@ -166,7 +166,7 @@ RULES: list[ThreatRule] = [
         mitre_technique="T1548.003 – Abuse Elevation Control: Sudo",
         mitre_url="https://attack.mitre.org/techniques/T1548/003/",
         pattern=re.compile(
-            r"(sudo:.*incorrect password|sudo:.*NOT in sudoers|sudo:.*command not allowed)",
+            r"(sudo(\[\d+\])?:.*incorrect password|sudo(\[\d+\])?:.*NOT in sudoers|sudo(\[\d+\])?:.*command not allowed)",
             re.IGNORECASE,
         ),
         tags=["sudo", "privilege-escalation", "linux"],
